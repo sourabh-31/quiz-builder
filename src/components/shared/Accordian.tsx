@@ -19,7 +19,9 @@ const AccordionItem = ({ title, children }: AccordianItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`w-full text-left text-lg transition-colors duration-200`}>
+    <div
+      className={`w-full rounded-md border border-[#ffcbb5] text-left text-lg transition-colors duration-200`}
+    >
       <button
         className="flex w-full items-center justify-between p-4 text-left"
         onClick={() => setIsOpen(!isOpen)}
@@ -34,7 +36,7 @@ const AccordionItem = ({ title, children }: AccordianItemProps) => {
 
 const Accordion = ({ items }: AccordinProps) => {
   return (
-    <div className="rounded-md border border-[#ffcbb5]">
+    <div className="space-y-4">
       {items.map((item, index) => (
         <AccordionItem key={index} title={item.title}>
           {item.content}
